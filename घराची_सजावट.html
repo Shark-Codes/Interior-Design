@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>घराची सजावट — कलाशैली परिचय</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --bg: #FAF6EE;
+    --bg-card: #FFFFFF;
+    --ink: #1F1B16;
+    --ink-soft: #5C5448;
+    --ink-muted: #8C8273;
+    --line: #E7DFCE;
+    --accent: #C66B3D;
+    --tint: #FBF1E4;
+    --serif: 'Noto Serif Devanagari', serif;
+    --body: 'Tiro Devanagari Marathi', 'Noto Serif Devanagari', serif;
+    --ui: 'Inter', system-ui, sans-serif;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body { overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width:100%; display:block; }
+
+  /* ───── HERO / COVER ───── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-text {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      radial-gradient(ellipse at top left, #F8EFDE 0%, transparent 50%),
+      linear-gradient(180deg, #FAF6EE 0%, #F0E8D6 100%);
+  }
+  .hero-eyebrow {
+    font-family: var(--ui);
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #8A6F4E;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(48px, 8vw, 110px);
+    line-height: 0.95;
+    color: #2A2520;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+  }
+  .hero .h1-em { color: var(--accent); font-style: italic; font-family: var(--body); }
+  .hero-sub {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: clamp(16px, 1.8vw, 22px);
+    color: #5C5448;
+    line-height: 1.55;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 60px;
+    border-top: 1px solid #D9CFB5;
+    padding-top: 24px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-family: var(--ui);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #7A6B52;
+  }
+  .hero-mosaic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 6px;
+    padding: 6px;
+    background: #2A2520;
+  }
+  .hero-mosaic .m {
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-mosaic .m img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+  .hero-mosaic .m:hover img { transform: scale(1.05); }
+  .m1 { grid-row: 1 / 3; }
+  .m4 { grid-row: 2 / 4; }
+
+  /* ───── STICKY NAV ───── */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 0;
+    padding: 0 20px;
+    scrollbar-width: thin;
+  }
+  .nav-inner::-webkit-scrollbar { height: 4px; }
+  .nav-inner::-webkit-scrollbar-thumb { background: #D6CDB8; border-radius:2px; }
+  .nav-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 14px 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    color: var(--ink-soft);
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .nav-link:hover { color: var(--ink); background: rgba(0,0,0,0.02); }
+  .nav-link.active {
+    color: var(--ink);
+    border-bottom-color: var(--accent-dynamic, var(--accent));
+  }
+  .n-num {
+    font-family: var(--ui);
+    font-size: 11px;
+    color: var(--ink-muted);
+  }
+  .n-name {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ───── INTRO TEXT BLOCK ───── */
+  .preface {
+    max-width: 760px;
+    margin: 120px auto;
+    padding: 0 40px;
+    text-align: center;
+  }
+  .preface .eyebrow {
+    font-family: var(--ui);
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .preface h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.25;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .preface p {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .rule {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 32px auto 0;
+  }
+
+  /* ───── STYLE SECTION ───── */
+  .style {
+    padding: 100px 0 80px;
+    position: relative;
+  }
+  .style:nth-child(odd) { background: var(--bg); }
+  .style:nth-child(even) { background: var(--tint); }
+  .style-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .s-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .s-num {
+    font-family: var(--ui);
+    font-weight: 300;
+    font-size: clamp(70px, 9vw, 130px);
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -4px;
+    flex-shrink: 0;
+  }
+  .s-titles { flex: 1; padding-bottom: 8px; }
+  .s-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 1.0;
+    color: var(--ink);
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+  }
+  .s-en {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: clamp(16px, 1.6vw, 22px);
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .s-tagline {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 600px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* HERO IMAGE */
+  .s-hero {
+    margin: 0 -40px 80px;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    position: relative;
+    background: #2A2520;
+  }
+  .s-hero img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .s-hero.broken::before {
+    content: '';
+    position: absolute; inset:0;
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, black));
+  }
+  .s-hero.broken::after {
+    content: 'चित्र लोड होऊ शकले नाही';
+    position: absolute; inset:0;
+    display: flex; align-items:center; justify-content:center;
+    color: rgba(255,255,255,0.7);
+    font-family: var(--body); font-style: italic;
+  }
+
+  /* TWO-COL: body + side card */
+  .s-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+  }
+  .h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--accent);
+    display: inline-block;
+  }
+  .h3:not(:first-child) { margin-top: 32px; }
+  .h3-en {
+    font-family: var(--ui);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--ink-muted);
+    margin-left: 8px;
+    text-transform: uppercase;
+    border: none;
+  }
+  .lead {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .s-body p {
+    text-align: justify;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .s-meta {
+    background: rgba(255,255,255,0.6);
+    border-top: 3px solid var(--accent);
+    padding: 28px 28px;
+    align-self: start;
+    backdrop-filter: blur(4px);
+  }
+  .meta-label {
+    font-family: var(--ui);
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .meta-row { margin-bottom: 16px; }
+  .meta-row strong {
+    font-family: var(--serif);
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .meta-row span {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* COMMON BLOCK */
+  .s-block { margin-bottom: 80px; }
+
+  /* PALETTE */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .sw { display: flex; flex-direction: column; }
+  .sw-color {
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 0 0 1px rgba(0,0,0,0.04);
+    transition: transform 0.3s;
+  }
+  .sw:hover .sw-color { transform: translateY(-2px); }
+  .sw-meta {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sw-hex {
+    font-family: var(--ui);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--ink-muted);
+    margin-bottom: 2px;
+  }
+  .sw-name {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .gallery .g-img {
+    overflow: hidden;
+    background: #2A2520;
+    position: relative;
+  }
+  .gallery .g-img:first-child { grid-row: 1 / 3; }
+  .gallery .g-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .gallery .g-img:hover img { transform: scale(1.04); }
+  .gallery .g-img.broken {
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, black));
+  }
+
+  /* FEATURES + FURNITURE */
+  .s-twocol {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+  }
+  .features {
+    list-style: none;
+    counter-reset: ft;
+    margin-top: 20px;
+  }
+  .features li {
+    counter-increment: ft;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    font-family: var(--body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .features li:before {
+    content: counter(ft, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: var(--ui);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--accent);
+    width: 32px;
+    letter-spacing: 1px;
+  }
+  .furn-hint {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin: 6px 0 20px;
+  }
+  .furn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .furn-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .furn-card:hover {
+    background: white;
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .furn-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tint);
+    color: var(--accent);
+    border-radius: 50%;
+    font-family: var(--ui);
+    font-size: 13px;
+    flex-shrink: 0;
+    transition: all 0.25s;
+  }
+  .furn-card:hover .furn-icon {
+    background: var(--accent);
+    color: white;
+    transform: rotate(45deg);
+  }
+  .furn-text { display: flex; flex-direction: column; line-height: 1.3; }
+  .furn-mr {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .furn-en {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: linear-gradient(180deg, var(--bg) 0%, #E8DFCB 100%);
+    padding: 120px 40px 60px;
+    text-align: center;
+  }
+  .closing-mark {
+    font-family: var(--serif);
+    font-size: 80px;
+    color: #C66B3D;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  footer h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  footer p {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    max-width: 660px;
+    margin: 0 auto 20px;
+  }
+  .credits {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid #D9CFB5;
+    font-family: var(--ui);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--ink-muted);
+  }
+  .credits a { color: var(--accent); text-decoration: underline; text-underline-offset:3px; }
+
+  /* ───── RESPONSIVE ───── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 60px 28px; }
+    .hero-mosaic { aspect-ratio: 4/3; }
+    .style-inner { padding: 0 24px; }
+    .s-hero { margin: 0 -24px 50px; aspect-ratio: 4/3; }
+    .s-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .s-grid { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
+    .palette { grid-template-columns: repeat(3, 1fr); }
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 240px 240px 240px; }
+    .gallery .g-img:first-child { grid-row: 1; }
+    .s-twocol { grid-template-columns: 1fr; gap: 50px; }
+    .furn-grid { grid-template-columns: 1fr; }
+    .preface { margin: 70px auto; padding: 0 28px; }
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+</style>
+</head>
+<body>
+
+<!-- ──────── HERO ──────── -->
+<section class="hero">
+  <div class="hero-text">
+    <div>
+      <div class="hero-eyebrow">A&nbsp;&nbsp;V I S U A L&nbsp;&nbsp;G U I D E</div>
+      <h1>घराची<br/><span class="h1-em">सजावट</span></h1>
+      <p class="hero-sub">घरगुती सजावटीच्या बारा लोकप्रिय कलाशैलींचा एक चित्रमय परिचय — प्रत्येकीचे तत्त्वज्ञान, रंग, साहित्य आणि सुचवलेले फर्निचर.</p>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">१२</div><div class="stat-label">SHELIES</div></div>
+      <div><div class="stat-num">६०+</div><div class="stat-label">PHOTOS</div></div>
+      <div><div class="stat-num">७२</div><div class="stat-label">FURN. PICKS</div></div>
+    </div>
+  </div>
+  <div class="hero-mosaic">
+    <div class="m m1"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/11/Japandi-style-living-room-Drew-F.jpg" alt=""/></div>
+    <div class="m m2"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Boho-living-room-interior-design-styles-by-Brooke-S.jpeg" alt=""/></div>
+    <div class="m m3"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/mid-century-modern-living-room-design-by-Decorilla-designer-Jonathan-K.--1024x978.jpg" alt=""/></div>
+    <div class="m m4"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Scandi-inspired-dining-room-by-Decorilla-designer-Devanshi-S.--963x1024.jpg" alt=""/></div>
+    <div class="m m5"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Different-interior-design-styles-Industrial-style-mid-century-modern-living-room-by-Darya-N.jpeg" alt=""/></div>
+    <div class="m m6"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/coastal-interior-design-styles.jpg" alt=""/></div>
+  </div>
+</section>
+
+<!-- ──────── NAV ──────── -->
+<nav class="topnav">
+  <div class="nav-inner"><a class="nav-link" data-target="bohemian"><span class="n-num">०१</span><span class="n-name">बोहेमियन</span></a><a class="nav-link" data-target="scandinavian"><span class="n-num">०२</span><span class="n-name">स्कँडिनेव्हियन</span></a><a class="nav-link" data-target="minimalist"><span class="n-num">०३</span><span class="n-name">मिनिमलिस्ट</span></a><a class="nav-link" data-target="industrial"><span class="n-num">०४</span><span class="n-name">इंडस्ट्रियल</span></a><a class="nav-link" data-target="midcentury"><span class="n-num">०५</span><span class="n-name">मिड-सेंच्युरी मॉडर्न</span></a><a class="nav-link" data-target="japandi"><span class="n-num">०६</span><span class="n-name">जपांडी</span></a><a class="nav-link" data-target="farmhouse"><span class="n-num">०७</span><span class="n-name">मॉडर्न फार्महाउस</span></a><a class="nav-link" data-target="coastal"><span class="n-num">०८</span><span class="n-name">कोस्टल</span></a><a class="nav-link" data-target="contemporary"><span class="n-num">०९</span><span class="n-name">कंटेम्पररी</span></a><a class="nav-link" data-target="glam"><span class="n-num">१०</span><span class="n-name">हॉलिवूड ग्लॅम</span></a><a class="nav-link" data-target="rustic"><span class="n-num">११</span><span class="n-name">रस्टिक</span></a><a class="nav-link" data-target="frenchcountry"><span class="n-num">१२</span><span class="n-name">फ्रेंच कंट्री</span></a></div>
+</nav>
+
+<!-- ──────── PREFACE ──────── -->
+<section class="preface reveal">
+  <div class="eyebrow">PROLOGUE</div>
+  <h2>घर म्हणजे केवळ चार भिंती नाहीत — ती तुमच्या मनाची ओळख आहे.</h2>
+  <p>प्रत्येक सजावटीच्या शैलीला तिचा स्वतःचा इतिहास आहे, तत्त्वज्ञान आहे आणि एक स्पष्ट सौंदर्यदृष्टी आहे. इथे बारा शैलींची ओळख — खरी चित्रे, रंगसंगती, मुख्य वैशिष्ट्ये आणि सुचवलेले फर्निचर सोबत. प्रत्येक फर्निचरच्या वस्तूवर क्लिक करा आणि गूगलवर त्याची चित्रे आणि खरेदी पर्याय पाहा.</p>
+  <div class="rule"></div>
+</section>
+
+<!-- ──────── STYLES ──────── -->
+
+<section class="style" id="bohemian" style="--accent:#C66B3D; --tint:#FBF1E4">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०१</div>
+      <div class="s-titles">
+        <h2 class="s-name">बोहेमियन</h2>
+        <div class="s-en">Bohemian</div>
+        <p class="s-tagline">मुक्त आत्म्याची, बहुसांस्कृतिक रंगसंगती</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Boho-living-room-interior-design-styles-by-Brooke-S.jpeg" alt="Bohemian"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">१९ व्या शतकातील पॅरिसमधील कलाकार आणि भटक्या जमातींच्या जीवनशैलीतून बोहेमियन शैली जन्माला आली. आज ती दक्षिण आशिया, मोरोक्को, मध्य अमेरिका आणि आफ्रिकेतील पारंपरिक हस्तकलांचा सुंदर संगम दर्शवते. कोणत्याही नियमांना न जुमानणारी, मुक्त आणि उत्साही — हीच तिची ओळख.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘बोहो’चे मुख्य तत्त्व — प्रत्येक वस्तूला तिची स्वतःची कथा असावी. इथे जुळणारे सेट नाहीत, फक्त आवडीने जमवलेल्या वस्तू आहेत.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>रॅटन, बांबू, मॅक्रामे, सुती-तागाचे कापड, टेराकोटा भांडी, जुने लाकूड</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>स्वतंत्र विचाराचे, कलाप्रेमी आणि प्रवासी लोक</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#C66B3D"></span><span class="sw-meta"><span class="sw-hex">#C66B3D</span><span class="sw-name">टेराकोटा</span></span></div><div class="sw"><span class="sw-color" style="background:#E0A458"></span><span class="sw-meta"><span class="sw-hex">#E0A458</span><span class="sw-name">मस्टर्ड</span></span></div><div class="sw"><span class="sw-color" style="background:#7A9E7E"></span><span class="sw-meta"><span class="sw-hex">#7A9E7E</span><span class="sw-name">सेज हिरवा</span></span></div><div class="sw"><span class="sw-color" style="background:#3D5A5C"></span><span class="sw-meta"><span class="sw-hex">#3D5A5C</span><span class="sw-name">गडद टील</span></span></div><div class="sw"><span class="sw-color" style="background:#F2E1C2"></span><span class="sw-meta"><span class="sw-hex">#F2E1C2</span><span class="sw-name">क्रीम</span></span></div><div class="sw"><span class="sw-color" style="background:#8B4513"></span><span class="sw-meta"><span class="sw-hex">#8B4513</span><span class="sw-name">खाकी तपकिरी</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Boho-living-room-interior-design-styles-by-Brooke-S.jpeg" alt="Bohemian interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Different-design-styles-Bohemian-living-room-by-Decorilla-designer-Brittney-A-1024x768.jpeg" alt="Bohemian interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Minimal-boho-decorating-by-Decorilla-Jonathan-K-1024x683.jpg" alt="Bohemian interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>थर थरांवर पसरलेले रंगीबेरंगी गालिचे आणि कुशन</li><li>मॅक्रामे, रॅटन आणि बांबूच्या हाताने विणलेल्या वस्तू</li><li>हँगिंग प्लांट्स आणि भरपूर हिरवळ</li><li>जुनी पुस्तके, प्रवासातील स्मरणिका, टेपेस्ट्री</li><li>जमिनीवर बसण्याची सोय — पाउफ, फ्लोअर कुशन</li><li>मेणबत्त्या, फेरी लाइट्स आणि उबदार पिवळसर प्रकाश</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Macrame+Wall+Hanging" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मॅक्रामे वॉल हँगिंग</span><span class="furn-en">Macrame Wall Hanging</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Rattan+Hanging+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">रॅटन हँगिंग चेअर</span><span class="furn-en">Rattan Hanging Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Kilim+Rug" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">किलिम गालिचा</span><span class="furn-en">Kilim Rug</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Floor+Cushion+/+Pouf" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">फ्लोअर कुशन / पाउफ</span><span class="furn-en">Floor Cushion / Pouf</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Boho+Tapestry" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">बोहो टेपेस्ट्री</span><span class="furn-en">Boho Tapestry</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Terracotta+Planter" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">टेराकोटा भांडे</span><span class="furn-en">Terracotta Planter</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="scandinavian" style="--accent:#6B7B8C; --tint:#F4F1EC">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०२</div>
+      <div class="s-titles">
+        <h2 class="s-name">स्कँडिनेव्हियन</h2>
+        <div class="s-en">Scandinavian</div>
+        <p class="s-tagline">साधेपणा, उबदारपणा आणि नैसर्गिक प्रकाश</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Scandinavian-decor-style-by-Decorilla-designer-Megan-W.--1024x683.jpg" alt="Scandinavian"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">डेन्मार्क, स्वीडन आणि नॉर्वे या देशांमधून आलेली ही शैली. लांब, गडद हिवाळ्यांमध्ये जास्तीत जास्त प्रकाश घरात यावा या गरजेतून तिचा जन्म झाला. म्हणूनच पांढरे रंग, हलक्या रंगांचे लाकूड आणि मोठ्या खिडक्या हे या शैलीचे ओळखीचे वैशिष्ट्य आहे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘हुग्गा’ (Hygge) — साधेपणातील समाधान, उबदारपणा आणि आपलेपणा. ‘लागोम’ — संतुलन आणि मध्यम मार्ग. कमी पण उत्तम दर्जाच्या वस्तू.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>हलक्या रंगाचे लाकूड (बर्च, पाइन, ओक), लोकर, ताग, चामडे, पांढरे सिरॅमिक</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>छोट्या जागा, स्वच्छ आणि शांत वातावरण आवडणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#F5F1EA"></span><span class="sw-meta"><span class="sw-hex">#F5F1EA</span><span class="sw-name">हस्तिदंती पांढरा</span></span></div><div class="sw"><span class="sw-color" style="background:#D8D3CB"></span><span class="sw-meta"><span class="sw-hex">#D8D3CB</span><span class="sw-name">वाळूचा करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#A8B8A8"></span><span class="sw-meta"><span class="sw-hex">#A8B8A8</span><span class="sw-name">ऋषी हिरवा</span></span></div><div class="sw"><span class="sw-color" style="background:#6B7B8C"></span><span class="sw-meta"><span class="sw-hex">#6B7B8C</span><span class="sw-name">धुक्याचा निळा</span></span></div><div class="sw"><span class="sw-color" style="background:#C8A57C"></span><span class="sw-meta"><span class="sw-hex">#C8A57C</span><span class="sw-name">हलके ओक</span></span></div><div class="sw"><span class="sw-color" style="background:#2E2E2E"></span><span class="sw-meta"><span class="sw-hex">#2E2E2E</span><span class="sw-name">कोळसा काळा</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Scandinavian-decor-style-by-Decorilla-designer-Megan-W.--1024x683.jpg" alt="Scandinavian interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Scandinavian-interior-design-style-by-Decorilla-designer-Devanshi-S-938x1024.jpg" alt="Scandinavian interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Scandi-inspired-dining-room-by-Decorilla-designer-Devanshi-S.--963x1024.jpg" alt="Scandinavian interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>पांढऱ्या भिंती आणि भरपूर नैसर्गिक प्रकाश</li><li>हलक्या रंगाचे बर्च किंवा पाइन लाकडी फर्निचर</li><li>स्वच्छ रेषा, गोंधळ नसलेली रचना</li><li>लोकर आणि तागाचे जाड कापड, उबदार ब्लँकेट्स</li><li>मेणबत्त्या आणि उबदार प्रकाश</li><li>एक-दोन हिरव्या वनस्पती — फिडल लीफ, मॉन्स्टेरा</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Wishbone+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">विशबोन चेअर</span><span class="furn-en">Wishbone Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Light+Oak+Dining+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लाइट ओक डायनिंग टेबल</span><span class="furn-en">Light Oak Dining Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Sheepskin+Throw" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">शीपस्किन थ्रो</span><span class="furn-en">Sheepskin Throw</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=PH+Lamp" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">PH लॅम्प (पॉल हेनिंगसेन)</span><span class="furn-en">PH Lamp</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Linen+Curtains" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लिनेन कर्टन्स</span><span class="furn-en">Linen Curtains</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Ceramic+Candle+Holder" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">सिरॅमिक कँडल होल्डर</span><span class="furn-en">Ceramic Candle Holder</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="minimalist" style="--accent:#3A3733; --tint:#F7F5F1">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०३</div>
+      <div class="s-titles">
+        <h2 class="s-name">मिनिमलिस्ट</h2>
+        <div class="s-en">Minimalist</div>
+        <p class="s-tagline">‘कमी हेच जास्त’ — शुद्धता, स्पष्टता, शांती</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Minimalist-interior-design-style-by-Decorilla-1024x574.jpg" alt="Minimalist"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">मिनिमलिझम ही फक्त सजावटीची शैली नाही, ती एक तत्त्वज्ञान आहे. जपानी झेन परंपरा आणि १९६० च्या दशकातील पाश्चात्य कला-चळवळ यांच्या संगमातून ती जन्माला आली. प्रत्येक वस्तूला कारण असावे, आणि जागेला श्वास घेण्याची मोकळीक मिळावी हेच इथले मूलभूत तत्त्व आहे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘जे आवश्यक नाही, ते काढून टाका.’ रिक्त जागा हीच इथली सजावट. एक उत्तम खुर्ची, एक चांगला दिवा — एवढेच पुरेसे.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>काँक्रीट, काच, स्टील, हलके लाकूड, मॅट सिरॅमिक</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>एकाग्रता हवी असणारे, कमी सामान आवडणारे, आधुनिक जीवनशैली</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#FFFFFF"></span><span class="sw-meta"><span class="sw-hex">#FFFFFF</span><span class="sw-name">शुद्ध पांढरा</span></span></div><div class="sw"><span class="sw-color" style="background:#EAE7E2"></span><span class="sw-meta"><span class="sw-hex">#EAE7E2</span><span class="sw-name">धुळीचा रंग</span></span></div><div class="sw"><span class="sw-color" style="background:#C9C2B6"></span><span class="sw-meta"><span class="sw-hex">#C9C2B6</span><span class="sw-name">मऊ बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#8A857D"></span><span class="sw-meta"><span class="sw-hex">#8A857D</span><span class="sw-name">गडद करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#3A3733"></span><span class="sw-meta"><span class="sw-hex">#3A3733</span><span class="sw-name">कोको तपकिरी</span></span></div><div class="sw"><span class="sw-color" style="background:#000000"></span><span class="sw-meta"><span class="sw-hex">#000000</span><span class="sw-name">खोल काळा</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Minimalist-interior-design-style-by-Decorilla-1024x574.jpg" alt="Minimalist interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Minimalist-living-dining-room-by-Decorilla-designer-Matthew-J-1024x771.jpg" alt="Minimalist interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Types-of-interior-design-styles-minimalist-dining-room-decorating-by-Eleni-P.png" alt="Minimalist interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>तटस्थ रंगांची मर्यादित रंगसंगती (२-३ रंग पुरेसे)</li><li>स्वच्छ, सरळ रेषा आणि भौमितिक आकार</li><li>कमी पण उच्च दर्जाच्या वस्तू</li><li>लपवलेला साठा — सर्व काही जागच्या जागी</li><li>एखादीच ठळक कलाकृती किंवा वनस्पती</li><li>खुली जागा, मोकळी हवा</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Platform+Bed" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">प्लॅटफॉर्म बेड (लो)</span><span class="furn-en">Platform Bed</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Slim+Console+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्लिम कन्सोल टेबल</span><span class="furn-en">Slim Console Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Sectional+Sofa+Beige" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">रिक्ल्यायनर सेक्शनल</span><span class="furn-en">Sectional Sofa Beige</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Monochrome+Wall+Art" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मोनोक्रोम वॉल आर्ट</span><span class="furn-en">Monochrome Wall Art</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Track+Lighting" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">ट्रॅक लाइटिंग</span><span class="furn-en">Track Lighting</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Low+Coffee+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लो प्रोफाइल कॉफी टेबल</span><span class="furn-en">Low Coffee Table</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="industrial" style="--accent:#B85C38; --tint:#F2EBE2">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०४</div>
+      <div class="s-titles">
+        <h2 class="s-name">इंडस्ट्रियल</h2>
+        <div class="s-en">Industrial</div>
+        <p class="s-tagline">गोदामांच्या अकृत्रिम सौंदर्याची शहरी शैली</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Different-interior-design-styles-Industrial-style-mid-century-modern-living-room-by-Darya-N.jpeg" alt="Industrial"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">२० व्या शतकाच्या मध्यात अमेरिकेतील जुन्या कारखान्यांचे आणि गोदामांचे रूपांतर निवासी जागांमध्ये होऊ लागले — तेथून इंडस्ट्रियल शैलीचा उगम झाला. उघडी विटांची भिंत, सिमेंटची जमीन, धातूचे पाईप — हे ‘दोष’ न मानता त्यांचेच सौंदर्य म्हणून स्वीकारणे, हीच या शैलीची खासियत.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>इथे ‘न लपवलेले’ हेच सजावटीचे साधन आहे. छताला दिसणारे पाईप, जुन्या लाकडाचे खडबडीत पोत, हाताने केलेल्या वेल्डिंगच्या खुणा — हे सर्व कथा सांगतात.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>उघडी वीट, सिमेंट, स्टील, रिक्लेम्ड लाकूड, गंजलेला धातू, जाडे चामडे</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>लोफ्ट, मोठ्या उघड्या जागा, शहरी अपार्टमेंट</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#3A342E"></span><span class="sw-meta"><span class="sw-hex">#3A342E</span><span class="sw-name">कोळसा करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#7D6E5C"></span><span class="sw-meta"><span class="sw-hex">#7D6E5C</span><span class="sw-name">जुना तपकिरी</span></span></div><div class="sw"><span class="sw-color" style="background:#B85C38"></span><span class="sw-meta"><span class="sw-hex">#B85C38</span><span class="sw-name">गंजलेला नारिंगी</span></span></div><div class="sw"><span class="sw-color" style="background:#5C5045"></span><span class="sw-meta"><span class="sw-hex">#5C5045</span><span class="sw-name">धुम्र तपकिरी</span></span></div><div class="sw"><span class="sw-color" style="background:#9B8B7E"></span><span class="sw-meta"><span class="sw-hex">#9B8B7E</span><span class="sw-name">स्टील करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#1F1B17"></span><span class="sw-meta"><span class="sw-hex">#1F1B17</span><span class="sw-name">रात्रीचा काळा</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Different-interior-design-styles-Industrial-style-mid-century-modern-living-room-by-Darya-N.jpeg" alt="Industrial interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Contemporary-industrial-decorating-style-in-loft-by-Decorilla-designer-Tracie-E-1024x738.jpg" alt="Industrial interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Interior-design-styles-Industrial-beddroom-by-Laura-A.jpg" alt="Industrial interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>उघडी विटांची भिंत किंवा सिमेंट प्लास्टर</li><li>एडिसन बल्ब आणि पिंजऱ्यासारखे दिवे</li><li>धातूच्या पाईपचे शेल्फ आणि फर्निचर</li><li>रिक्लेम्ड लाकूड — जुन्या कारखान्यांचे, बोटींचे</li><li>जाड चामड्याचे सोफे आणि खुर्च्या</li><li>उंच छत, मोठ्या स्टीलच्या खिडक्या</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Edison+Bulb+Pendant+Light" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">एडिसन बल्ब पेंडंट</span><span class="furn-en">Edison Bulb Pendant Light</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Metal+Pipe+Bookshelf" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मेटल पाइप शेल्फ</span><span class="furn-en">Metal Pipe Bookshelf</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Leather+Chesterfield+Sofa" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लेदर चेस्टरफील्ड सोफा</span><span class="furn-en">Leather Chesterfield Sofa</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Industrial+Bar+Stool" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मेटल बार स्टूल</span><span class="furn-en">Industrial Bar Stool</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Reclaimed+Wood+Desk" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">रिक्लेम्ड वुड डेस्क</span><span class="furn-en">Reclaimed Wood Desk</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Vintage+Factory+Cart+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">व्हिंटेज फॅक्टरी कार्ट</span><span class="furn-en">Vintage Factory Cart Table</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="midcentury" style="--accent:#2F6B6E; --tint:#F5EFE0">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०५</div>
+      <div class="s-titles">
+        <h2 class="s-name">मिड-सेंच्युरी मॉडर्न</h2>
+        <div class="s-en">Mid-Century Modern</div>
+        <p class="s-tagline">१९५० च्या दशकातील कालातीत आधुनिकता</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/mid-century-modern-living-room-design-by-Decorilla-designer-Jonathan-K.--1024x978.jpg" alt="Mid-Century Modern"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">१९४५ ते १९६५ या काळात — अमेरिकेत आणि स्कँडिनेव्हियामध्ये जन्मलेली ही शैली आजही तितकीच आधुनिक वाटते. चार्ल्स आणि रे ईम्स, अर्ने जेकोब्सन, फिन यूल या डिझायनरांच्या कामातून जन्मलेले फर्निचर आज क्लासिक झाले आहे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>कार्यक्षमता आणि सौंदर्य एकाच वेळी. अंगभूत वक्ररेषा, टेपर्ड पाय असलेले फर्निचर, ठळक भौमितिक रचना — आणि अमेरिकेच्या ‘अंतराळ युगा’तील आशावादी ऊर्जा.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>अक्रोड, टीक, रोझवूड, पितळ, मखमली, ऑर्गॅनिक प्लास्टिक</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>क्लासिक डिझाइन आवडणारे, गुंतवणूकयोग्य फर्निचरमध्ये रस असणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#D4A24C"></span><span class="sw-meta"><span class="sw-hex">#D4A24C</span><span class="sw-name">सोनेरी मस्टर्ड</span></span></div><div class="sw"><span class="sw-color" style="background:#2F6B6E"></span><span class="sw-meta"><span class="sw-hex">#2F6B6E</span><span class="sw-name">मोराचा टील</span></span></div><div class="sw"><span class="sw-color" style="background:#8B4A2B"></span><span class="sw-meta"><span class="sw-hex">#8B4A2B</span><span class="sw-name">जळलेला नारिंगी</span></span></div><div class="sw"><span class="sw-color" style="background:#E8DCC4"></span><span class="sw-meta"><span class="sw-hex">#E8DCC4</span><span class="sw-name">क्रीम बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#6B8E4E"></span><span class="sw-meta"><span class="sw-hex">#6B8E4E</span><span class="sw-name">ऑलिव्ह हिरवा</span></span></div><div class="sw"><span class="sw-color" style="background:#3A2A1F"></span><span class="sw-meta"><span class="sw-hex">#3A2A1F</span><span class="sw-name">अक्रोड तपकिरी</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/mid-century-modern-living-room-design-by-Decorilla-designer-Jonathan-K.--1024x978.jpg" alt="Mid-Century Modern interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/mid-century-modern-interior-design-styles.jpg" alt="Mid-Century Modern interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Mid-century-modern-decorating-styles-in-an-interior-by-Leonora-M.jpg" alt="Mid-Century Modern interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>टेपर्ड पाय असलेले अक्रोड लाकडाचे फर्निचर</li><li>ऑर्गॅनिक आणि भौमितिक आकारांचे मिश्रण</li><li>मस्टर्ड, टील, ऑलिव्ह असे ठळक रंग</li><li>स्टारबर्स्ट किंवा अणूच्या आकाराचे दिवे</li><li>मोठ्या खिडक्या आणि बाहेरील जगाशी संपर्क</li><li>मखमलीचे आणि वूलचे अपहोल्स्ट्री</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Eames+Lounge+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">ईम्स लाउंज चेअर</span><span class="furn-en">Eames Lounge Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Sputnik+Chandelier" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्पुटनिक शॅंडेलियर</span><span class="furn-en">Sputnik Chandelier</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Walnut+Credenza" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">वॉलनट साइडबोर्ड</span><span class="furn-en">Walnut Credenza</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Arne+Jacobsen+Egg+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">एग चेअर (जेकोब्सन)</span><span class="furn-en">Arne Jacobsen Egg Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Tapered+Leg+Coffee+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">टेपर्ड लेग कॉफी टेबल</span><span class="furn-en">Tapered Leg Coffee Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Velvet+Sofa+Mid+Century" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मखमली सोफा</span><span class="furn-en">Velvet Sofa Mid Century</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="japandi" style="--accent:#5C4A3A; --tint:#F4EFE5">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०६</div>
+      <div class="s-titles">
+        <h2 class="s-name">जपांडी</h2>
+        <div class="s-en">Japandi</div>
+        <p class="s-tagline">जपानी झेन आणि स्कँडिनेव्हियन उबदारपणाचा संगम</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/11/Japandi-style-living-room-Drew-F.jpg" alt="Japandi"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">जपानी ‘वाबी-साबी’ आणि स्कँडिनेव्हियन ‘हुग्गा’ या दोन तत्त्वज्ञानांचा सुंदर संगम म्हणजे जपांडी. अपूर्णतेतील सौंदर्य आणि साधेपणातील आराम — दोन्ही एकाच जागी. आजच्या वेगवान शहरी जीवनात मनःशांती देणारी ही शैली अतिशय लोकप्रिय आहे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘वाबी-साबी’ — क्षणभंगुर, अपूर्ण आणि अपूर्ण गोष्टींमधले सौंदर्य. हाताने बनवलेले सिरॅमिक, असमतोल पॉटरी, नैसर्गिक रेषा — हे सारे साजरे केले जातात.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>हलका ओक, बांबू, ताग, हाताने बनवलेले सिरॅमिक, कागद (शोजी), अनगडलेले लाकूड</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>ध्यान, शांती, साधेपणा आणि गुणवत्ता शोधणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#E8DFD3"></span><span class="sw-meta"><span class="sw-hex">#E8DFD3</span><span class="sw-name">हस्तिदंती क्रीम</span></span></div><div class="sw"><span class="sw-color" style="background:#A89684"></span><span class="sw-meta"><span class="sw-hex">#A89684</span><span class="sw-name">उबदार बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#5C4A3A"></span><span class="sw-meta"><span class="sw-hex">#5C4A3A</span><span class="sw-name">गडद ओक</span></span></div><div class="sw"><span class="sw-color" style="background:#D6CFC2"></span><span class="sw-meta"><span class="sw-hex">#D6CFC2</span><span class="sw-name">मऊ करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#7D8471"></span><span class="sw-meta"><span class="sw-hex">#7D8471</span><span class="sw-name">ऋषी हिरवा</span></span></div><div class="sw"><span class="sw-color" style="background:#2D2520"></span><span class="sw-meta"><span class="sw-hex">#2D2520</span><span class="sw-name">खोल कोको</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/11/Japandi-style-living-room-Drew-F.jpg" alt="Japandi interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/11/Japandi-style-dining-room-Wanda-P.jpg" alt="Japandi interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/11/Japandi-dining-room-AD.jpg" alt="Japandi interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>खालची, जमिनीजवळची बैठक आणि टेबल</li><li>हाताने बनवलेले सिरॅमिक आणि मातीची भांडी</li><li>बांबू, ओक आणि सुती तागाचे साहित्य</li><li>नैसर्गिक रंगांची तटस्थ रंगसंगती</li><li>बोन्साय, इकेबाना — कमी पण अर्थपूर्ण हिरवळ</li><li>कागदी दिवे, मऊ पसरणारा प्रकाश</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Low+Platform+Bed+Japandi" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लो प्लॅटफॉर्म बेड</span><span class="furn-en">Low Platform Bed Japandi</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Shoji+Screen+Room+Divider" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">शोजी स्क्रीन</span><span class="furn-en">Shoji Screen Room Divider</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Rice+Paper+Lantern" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">राइस पेपर लॅंप</span><span class="furn-en">Rice Paper Lantern</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Tatami+Mat" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">बांबू मॅट / तातामी</span><span class="furn-en">Tatami Mat</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Handmade+Ceramic+Vase" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">हस्तकलेचे सिरॅमिक भांडे</span><span class="furn-en">Handmade Ceramic Vase</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Low+Oak+Dining+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लो ओक डायनिंग टेबल</span><span class="furn-en">Low Oak Dining Table</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="farmhouse" style="--accent:#7A5C3C; --tint:#F6F0E5">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०७</div>
+      <div class="s-titles">
+        <h2 class="s-name">मॉडर्न फार्महाउस</h2>
+        <div class="s-en">Modern Farmhouse</div>
+        <p class="s-tagline">ग्रामीण उबदारपण + आधुनिक स्वच्छता</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Home-decor-styles-in-a-modern-farmhouse-by-Decorilla-designer-Denise-R-1024x683.jpg" alt="Modern Farmhouse"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">Joanna Gaines यांनी प्रसिद्ध केलेली, ग्रामीण फार्महाउस सजावटीची आधुनिक आवृत्ती. पारंपरिक शिप-लॅप आणि बार्न डोअरला आधुनिक स्वच्छ रेषा आणि नवीन उपकरणांची जोड. हे साधेपण, उबदारपण आणि घरगुती आपलेपणा एकत्र देतात.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘उबदार न्यूट्रल’ — कोणतेही गडद रंग नाहीत, पण रिकामेपणही नाही. प्रत्येक खोलीला कथा सांगणारी एखादी जुनी वस्तू हवीच.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>व्हाइटवॉश्ड लाकूड, बार्न लाकूड, लिनेन, गॅल्व्हनाइज्ड मेटल, चित्रित मिट्टीची भांडी</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>मोठी कुटुंबे, ग्रामीण-समुद्रकिनारी जागा, उबदार आपलेपण आवडणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#F5F0E6"></span><span class="sw-meta"><span class="sw-hex">#F5F0E6</span><span class="sw-name">क्रीम पांढरा</span></span></div><div class="sw"><span class="sw-color" style="background:#D6C7A8"></span><span class="sw-meta"><span class="sw-hex">#D6C7A8</span><span class="sw-name">ओट बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#7A5C3C"></span><span class="sw-meta"><span class="sw-hex">#7A5C3C</span><span class="sw-name">बार्न तपकिरी</span></span></div><div class="sw"><span class="sw-color" style="background:#9DA39A"></span><span class="sw-meta"><span class="sw-hex">#9DA39A</span><span class="sw-name">सेज ग्रे</span></span></div><div class="sw"><span class="sw-color" style="background:#2C2620"></span><span class="sw-meta"><span class="sw-hex">#2C2620</span><span class="sw-name">जुना काळा</span></span></div><div class="sw"><span class="sw-color" style="background:#B7895A"></span><span class="sw-meta"><span class="sw-hex">#B7895A</span><span class="sw-name">मध तपकिरी</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Home-decor-styles-in-a-modern-farmhouse-by-Decorilla-designer-Denise-R-1024x683.jpg" alt="Modern Farmhouse interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Modern-farmhouse-kitchen-decorating-styles-by-Decorilla-designer-Caroline-M.--1024x679.jpg" alt="Modern Farmhouse interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Interior-design-styles-Farmhouse-interior-design-for-a-living-room-by-Decorilla-1024x683.jpeg" alt="Modern Farmhouse interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>शिप-लॅप भिंत आणि बार्न डोअर</li><li>मोठ्या फार्म-स्टाइल जेवणाच्या टेबल</li><li>मिक्स्ड मेटल फिनिश — काळा, सोनेरी, निकेल</li><li>वाइड-प्लांक लाकडी फरशी</li><li>ओपन कन्सेप्ट किचन</li><li>विकर बास्केट्स आणि मेसन जार्स</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Sliding+Barn+Door" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">बार्न डोअर</span><span class="furn-en">Sliding Barn Door</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Farmhouse+Dining+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">फार्महाउस डायनिंग टेबल</span><span class="furn-en">Farmhouse Dining Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Shiplap+Wall+Panel" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">शिप-लॅप पॅनेल</span><span class="furn-en">Shiplap Wall Panel</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Apothecary+Cabinet" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">ॲपोथेकरी कॅबिनेट</span><span class="furn-en">Apothecary Cabinet</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Mason+Jar+Pendant+Light" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मेसन जार पेंडंट</span><span class="furn-en">Mason Jar Pendant Light</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Woven+Wicker+Basket+Set" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">विकर बास्केट सेट</span><span class="furn-en">Woven Wicker Basket Set</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="coastal" style="--accent:#5B89A6; --tint:#F0F4F4">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०८</div>
+      <div class="s-titles">
+        <h2 class="s-name">कोस्टल</h2>
+        <div class="s-en">Coastal</div>
+        <p class="s-tagline">समुद्राच्या लाटांसारखी हलकी, मोकळी हवा</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/coastal-interior-design-styles.jpg" alt="Coastal"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">समुद्रकिनाऱ्यावर राहायला नाहीच जमणार? तरीही तुमचे घर कोस्टल असू शकते. भरपूर प्रकाश, हलक्या हवेसारखे कापड, वाळू-निळ्या रंगाची तटस्थ रंगसंगती — आणि नैसर्गिक साहित्य. हे फक्त समुद्राचे थीम नाही — हा एक मनःस्थिती आहे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>घरात बाहेरचा वारा यायला हवा. प्रकाश थांबू नये, हवा वाहती असावी. अँकर, शिंपले — हे क्लिशे नकोत; ऐवजी निळ्या काचेच्या फुलदाण्या आणि स्ट्राइप्ड पॅटर्न.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>ब्लीच्ड वुड, विकर, ज्यूट, लिनेन, ब्लू ग्लास, सी-ग्लास</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>समुद्रकिनारी घरे, उन्हाळ्यातील व्हिला, हलक्या-मोकळ्या जागा आवडणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#FFFFFF"></span><span class="sw-meta"><span class="sw-hex">#FFFFFF</span><span class="sw-name">शुभ्र पांढरा</span></span></div><div class="sw"><span class="sw-color" style="background:#E8E2D3"></span><span class="sw-meta"><span class="sw-hex">#E8E2D3</span><span class="sw-name">वाळूचा क्रीम</span></span></div><div class="sw"><span class="sw-color" style="background:#D4D9DC"></span><span class="sw-meta"><span class="sw-hex">#D4D9DC</span><span class="sw-name">मोती करडा</span></span></div><div class="sw"><span class="sw-color" style="background:#A8C5D9"></span><span class="sw-meta"><span class="sw-hex">#A8C5D9</span><span class="sw-name">आकाश निळा</span></span></div><div class="sw"><span class="sw-color" style="background:#5B89A6"></span><span class="sw-meta"><span class="sw-hex">#5B89A6</span><span class="sw-name">समुद्र निळा</span></span></div><div class="sw"><span class="sw-color" style="background:#C2B59B"></span><span class="sw-meta"><span class="sw-hex">#C2B59B</span><span class="sw-name">ज्यूट तपकिरी</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/coastal-interior-design-styles.jpg" alt="Coastal interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Home-decor-and-decorating-styles-for-a-beach-house-by-Decorilla-1024x683.jpg" alt="Coastal interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/coastal-interior-design-style-bedroom.jpg" alt="Coastal interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>तटस्थ पांढरा/बेज तळ + निळ्या रंगाचे पॉप्स</li><li>हलके, पारदर्शक पडदे — वारा खेळू द्यावा</li><li>विकर, ज्यूट, सी ग्रास साहित्य</li><li>ब्लीच्ड वुड, व्हाइटवॉश्ड फर्निचर</li><li>मोठ्या खिडक्या, खिडकीतून दिसणारा प्रकाश</li><li>इनडोअर प्लांट्स — आवश्यकच</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Wicker+Lounge+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">विकर लाउंज चेअर</span><span class="furn-en">Wicker Lounge Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Jute+Rug" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">ज्यूट गालिचा</span><span class="furn-en">Jute Rug</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Bleached+Wood+Coffee+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">ब्लीच्ड वुड कॉफी टेबल</span><span class="furn-en">Bleached Wood Coffee Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Linen+Slipcover+Sofa" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लिनेन स्लिपकव्हर सोफा</span><span class="furn-en">Linen Slipcover Sofa</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Striped+Throw+Pillows" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्ट्राइप्ड कुशन्स</span><span class="furn-en">Striped Throw Pillows</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Capiz+Shell+Pendant" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">शेल पेंडंट लॅंप</span><span class="furn-en">Capiz Shell Pendant</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="contemporary" style="--accent:#5A6470; --tint:#F4F2EE">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">०९</div>
+      <div class="s-titles">
+        <h2 class="s-name">कंटेम्पररी</h2>
+        <div class="s-en">Contemporary</div>
+        <p class="s-tagline">‘आत्ता’ची शैली — सतत बदलणारी, सतत नवीन</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Refined-contemporary-interior-design-style-by-Decorilla-1024x572.jpg" alt="Contemporary"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">कंटेम्पररी म्हणजे ‘आत्ताचे’. ‘मॉडर्न’ हा शब्द एका कालखंडाशी जोडलेला आहे (२० व्या शतकातला); कंटेम्पररी मात्र सतत बदलते. आज मऊ वक्र, टेक्स्चर्ड फॅब्रिक्स, क्विएट लक्झरी आणि नैसर्गिक साहित्य या त्याची ओळख आहेत.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>ट्रेंडशी जोडलेली पण तटस्थ — ‘कमी पण बोलकी’. एक स्टेटमेंट पीस आणि बाकीची शांतता.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>मेटल, काच, मार्बल, मॅट लाकूड, बूकले फॅब्रिक</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>ट्रेंडसोबत राहायचे आहे, पण माफक रीतीने — असे लोक</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#F2EFEA"></span><span class="sw-meta"><span class="sw-hex">#F2EFEA</span><span class="sw-name">ऑफ-व्हाइट</span></span></div><div class="sw"><span class="sw-color" style="background:#D6CFC2"></span><span class="sw-meta"><span class="sw-hex">#D6CFC2</span><span class="sw-name">टीप-ग्रे</span></span></div><div class="sw"><span class="sw-color" style="background:#5A6470"></span><span class="sw-meta"><span class="sw-hex">#5A6470</span><span class="sw-name">स्टील ब्लू</span></span></div><div class="sw"><span class="sw-color" style="background:#A89378"></span><span class="sw-meta"><span class="sw-hex">#A89378</span><span class="sw-name">टॉब</span></span></div><div class="sw"><span class="sw-color" style="background:#252525"></span><span class="sw-meta"><span class="sw-hex">#252525</span><span class="sw-name">गडद ग्रेफाइट</span></span></div><div class="sw"><span class="sw-color" style="background:#B25638"></span><span class="sw-meta"><span class="sw-hex">#B25638</span><span class="sw-name">रस्ट अॅक्सेंट</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Refined-contemporary-interior-design-style-by-Decorilla-1024x572.jpg" alt="Contemporary interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Contemporary-open-plan-home-by-Decorilla-designer-Anna-C-1024x683.jpeg" alt="Contemporary interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/Contemporary-interior-design-styles-by-Decorilla-1024x574.jpeg" alt="Contemporary interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>ओपन-प्लॅन लेआउट</li><li>तटस्थ रंगसंगती + एक ठळक अॅक्सेंट</li><li>मऊ वक्ररेषा, उघडे पाय असलेले फर्निचर</li><li>मेटल + काच + ऑर्गॅनिक साहित्य</li><li>मोठ्या स्केलची कलाकृती</li><li>अप्रत्यक्ष / ट्रॅक लाइटिंग</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Curved+Sectional+Sofa" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">कर्व्ड सेक्शनल सोफा</span><span class="furn-en">Curved Sectional Sofa</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Sculptural+Coffee+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्केलप्टरल कॉफी टेबल</span><span class="furn-en">Sculptural Coffee Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Large+Abstract+Wall+Art" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लार्ज-स्केल अबस्ट्रॅक्ट आर्ट</span><span class="furn-en">Large Abstract Wall Art</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Marble+Side+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मार्बल टॉप साइड टेबल</span><span class="furn-en">Marble Side Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Boucle+Accent+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">बूकले अॅक्सेंट चेअर</span><span class="furn-en">Boucle Accent Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Linear+Pendant+Light" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लिनिअर पेंडंट लाइट</span><span class="furn-en">Linear Pendant Light</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="glam" style="--accent:#8B5A6E; --tint:#F7F0E8">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">१०</div>
+      <div class="s-titles">
+        <h2 class="s-name">हॉलिवूड ग्लॅम</h2>
+        <div class="s-en">Hollywood Glam</div>
+        <p class="s-tagline">१९३० च्या गोल्डन एज मधील झगमगाट</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/hollywood-glam-design-style-by-Decorilla-1024x683.jpeg" alt="Hollywood Glam"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">हॉलिवूडच्या १९३० च्या दशकाच्या गोल्डन एज पासून प्रेरित — आर्ट डेको आणि मिड-सेंच्युरी मॉडर्न यांचा झगमगीत संगम. क्रिस्टल शॅंडेलियर, मखमलीच्या सोफ्या, मिरर्ड फर्निचर — हे सर्व या शैलीची ओळख. ‘इथे पाहायला आणि पाहिले जायला हवे.’</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>लक्झरी कमी ठिकाणी पण ठळकपणे. १-२ बोल्ड एलिमेंट्स पुरेसे — गोष्टी जास्त नकोत, पण ज्या असतील त्या लखलखीत हव्यात.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>मखमली, सॅटिन, मार्बल, पितळ, सोनेरी, मिरर्ड ग्लास, क्रिस्टल</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>होस्टिंग आवडणारे, ड्रामॅटिक लक्झरी हवी असणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#1A1A1A"></span><span class="sw-meta"><span class="sw-hex">#1A1A1A</span><span class="sw-name">टक्सीडो काळा</span></span></div><div class="sw"><span class="sw-color" style="background:#F5F5F0"></span><span class="sw-meta"><span class="sw-hex">#F5F5F0</span><span class="sw-name">मोती पांढरा</span></span></div><div class="sw"><span class="sw-color" style="background:#C9A064"></span><span class="sw-meta"><span class="sw-hex">#C9A064</span><span class="sw-name">शॅंपेन सोनेरी</span></span></div><div class="sw"><span class="sw-color" style="background:#5C0B25"></span><span class="sw-meta"><span class="sw-hex">#5C0B25</span><span class="sw-name">वाइन लाल</span></span></div><div class="sw"><span class="sw-color" style="background:#8B5A6E"></span><span class="sw-meta"><span class="sw-hex">#8B5A6E</span><span class="sw-name">ब्लश गुलाबी</span></span></div><div class="sw"><span class="sw-color" style="background:#2C4F4A"></span><span class="sw-meta"><span class="sw-hex">#2C4F4A</span><span class="sw-name">खोल पाचू</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2024/05/hollywood-glam-design-style-by-Decorilla-1024x683.jpeg" alt="Hollywood Glam interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/hollywood-glam-interior-design-styles.jpg" alt="Hollywood Glam interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Eclectic-hollywood-glam-interior-design-styles-by-Tera-S-1024x768.jpg" alt="Hollywood Glam interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>क्रिस्टल किंवा मेटॅलिक शॅंडेलियर</li><li>मखमली, सॅटिन, सिल्क अपहोल्स्ट्री</li><li>मिरर्ड / हाय-ग्लॉस फर्निचर</li><li>ब्लॅक + व्हाइट किंवा गुलाबी + सोनेरी</li><li>गोल्ड / पितळी अॅक्सेंट</li><li>जिओमेट्रिक नक्षीदार वॉलपेपर</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Crystal+Chandelier" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">क्रिस्टल शॅंडेलियर</span><span class="furn-en">Crystal Chandelier</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Mirrored+Dresser" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मिरर्ड ड्रेसर</span><span class="furn-en">Mirrored Dresser</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Velvet+Tufted+Sofa" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">मखमली टफ्टेड सोफा</span><span class="furn-en">Velvet Tufted Sofa</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Gold+Accent+Side+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">गोल्ड साइड टेबल</span><span class="furn-en">Gold Accent Side Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Faux+Fur+Throw" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">फॉक्स फर थ्रो</span><span class="furn-en">Faux Fur Throw</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Statement+Gold+Mirror" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्टेटमेंट गोल्ड मिरर</span><span class="furn-en">Statement Gold Mirror</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="rustic" style="--accent:#7A4B2A; --tint:#F5EEDF">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">११</div>
+      <div class="s-titles">
+        <h2 class="s-name">रस्टिक</h2>
+        <div class="s-en">Rustic</div>
+        <p class="s-tagline">नैसर्गिक, खडबडीत, उबदार — एक केबिनसारखे</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Rustic-style-kitchen-by-Decorilla-designer-Jamie-M.--1024x773.jpg" alt="Rustic"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">‘रोमँटिक मूव्हमेंट’ पासून प्रेरित — रस्टिक शैली निसर्गाची साधेपणाची आणि सहज सौंदर्याची आहे. एक मोठा फायरप्लेस, खडबडीत लाकडी फर्निचर, काऊहाइड किंवा शीपस्किन रग्ज — आणि बाहेरून आत आणलेले निसर्गाचे तुकडे.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘अनफिनिश्ड’ हेच इथले सौंदर्य. खडबडीत दगड, मोडक्या लाकडाची भिंत, हाताने केलेल्या वस्तू — हीच इथली भाषा.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>खडबडीत लाकूड, दगड, चामडे, लोखंड, लोकर, फर</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>केबिन, माउंटन घर, थंडीच्या जागा, उबदार वातावरण आवडणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#D4C4A8"></span><span class="sw-meta"><span class="sw-hex">#D4C4A8</span><span class="sw-name">ओट क्रीम</span></span></div><div class="sw"><span class="sw-color" style="background:#B89875"></span><span class="sw-meta"><span class="sw-hex">#B89875</span><span class="sw-name">लाकडी बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#7A4B2A"></span><span class="sw-meta"><span class="sw-hex">#7A4B2A</span><span class="sw-name">गडद ओक</span></span></div><div class="sw"><span class="sw-color" style="background:#3D2918"></span><span class="sw-meta"><span class="sw-hex">#3D2918</span><span class="sw-name">एस्प्रेसो</span></span></div><div class="sw"><span class="sw-color" style="background:#5A6B47"></span><span class="sw-meta"><span class="sw-hex">#5A6B47</span><span class="sw-name">मॉस हिरवा</span></span></div><div class="sw"><span class="sw-color" style="background:#A8302C"></span><span class="sw-meta"><span class="sw-hex">#A8302C</span><span class="sw-name">टेराकोटा लाल</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Rustic-style-kitchen-by-Decorilla-designer-Jamie-M.--1024x773.jpg" alt="Rustic interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Rustic-farmhouse-interior-design-style-by-Jamie-M.jpg" alt="Rustic interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/10/Living-room-with-rustic-design-styles-by-Sharene-M.jpg" alt="Rustic interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>मोठा दगडी किंवा वीटांचा फायरप्लेस</li><li>एक्सपोज्ड लाकडी तुळया (बीम)</li><li>रिक्लेम्ड / डिस्ट्रेस्ड लाकूड</li><li>काऊहाइड, शीपस्किन, वूल रग्ज</li><li>बकेट चामड्याच्या खुर्च्या</li><li>अँटलर शॅंडेलियर / लोखंडी फिक्स्चर्स</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Reclaimed+Wood+Dining+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">रिक्लेम्ड वुड डायनिंग टेबल</span><span class="furn-en">Reclaimed Wood Dining Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Cowhide+Rug" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">काऊहाइड रग</span><span class="furn-en">Cowhide Rug</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Distressed+Leather+Club+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लेदर क्लब चेअर</span><span class="furn-en">Distressed Leather Club Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Antler+Chandelier" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">अँटलर शॅंडेलियर</span><span class="furn-en">Antler Chandelier</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Stone+Fireplace+Mantel" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">स्टोन फायरप्लेस मॅंटल</span><span class="furn-en">Stone Fireplace Mantel</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Wrought+Iron+Candelabra" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">आयर्न कँडलाब्रा</span><span class="furn-en">Wrought Iron Candelabra</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="style" id="frenchcountry" style="--accent:#8B6E5C; --tint:#F6F1E8">
+  <div class="style-inner">
+
+    <header class="s-header">
+      <div class="s-num">१२</div>
+      <div class="s-titles">
+        <h2 class="s-name">फ्रेंच कंट्री</h2>
+        <div class="s-en">French Country</div>
+        <p class="s-tagline">प्रोव्हेन्स-स्टाइलची रोमँटिक नाजूकता</p>
+      </div>
+    </header>
+
+    <div class="s-hero">
+      <img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/french-country-interior-design-styles.jpg" alt="French Country"
+           onerror="this.parentElement.classList.add('broken')"/>
+    </div>
+
+    <div class="s-grid">
+      <article class="s-body">
+        <h3 class="h3">परिचय</h3>
+        <p class="lead">दक्षिण फ्रान्समधील प्रोव्हेन्स प्रांतापासून प्रेरित. शॅबी शिक, फार्महाउस आणि ट्रॅडिशनल या तिघांचा सुसंगत सुंदर संगम. वेदर्ड वुड, टफ्टेड अपहोल्स्ट्री, मऊ रंग आणि फुलांचे पॅटर्न — आणि एक रोमँटिक, थोडे कोरीव कारागिरीचे वातावरण.</p>
+        <h3 class="h3">तत्त्वज्ञान</h3>
+        <p>‘वयाने अधिक सुंदर.’ नवीन कोरडी निखालसता नको, थोडी पॅटिना हवीच. प्रत्येक खोलीला नॉस्टॅल्जियाचा थोडा स्पर्श.</p>
+      </article>
+      <aside class="s-meta">
+        <div class="meta-label">एक नजरेत</div>
+        <div class="meta-row"><strong>साहित्य</strong><span>वेदर्ड लाकूड, रॉट आयर्न, लिनेन, टॉइल फॅब्रिक, मिट्टीची भांडी</span></div>
+        <div class="meta-row"><strong>कोणासाठी</strong><span>रोमँटिक, क्लासिक आणि किंचित विंटेज आवडणारे</span></div>
+      </aside>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">रंगसंगती <span class="h3-en">Palette</span></h3>
+      <div class="palette"><div class="sw"><span class="sw-color" style="background:#F5EDDF"></span><span class="sw-meta"><span class="sw-hex">#F5EDDF</span><span class="sw-name">लिनेन क्रीम</span></span></div><div class="sw"><span class="sw-color" style="background:#D6CDBA"></span><span class="sw-meta"><span class="sw-hex">#D6CDBA</span><span class="sw-name">लॅव्हेंडर ग्रे</span></span></div><div class="sw"><span class="sw-color" style="background:#A8A07A"></span><span class="sw-meta"><span class="sw-hex">#A8A07A</span><span class="sw-name">ऑलिव्ह बेज</span></span></div><div class="sw"><span class="sw-color" style="background:#8B6E5C"></span><span class="sw-meta"><span class="sw-hex">#8B6E5C</span><span class="sw-name">वेदर्ड वुड</span></span></div><div class="sw"><span class="sw-color" style="background:#B5859A"></span><span class="sw-meta"><span class="sw-hex">#B5859A</span><span class="sw-name">मऊ लॅव्हेंडर</span></span></div><div class="sw"><span class="sw-color" style="background:#5C6E5A"></span><span class="sw-meta"><span class="sw-hex">#5C6E5A</span><span class="sw-name">सेज ग्रीन</span></span></div></div>
+    </div>
+
+    <div class="s-block">
+      <h3 class="h3">अधिक चित्रे <span class="h3-en">More views</span></h3>
+      <div class="gallery"><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2019/06/french-country-interior-design-styles.jpg" alt="French Country interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/French-country-seating-nook-by-Decorilla-designer-Lauren-L.--899x1024.jpg" alt="French Country interior" onerror="this.parentElement.classList.add('broken')"/></figure><figure class="g-img"><img loading="lazy" src="https://www.decorilla.com/online-decorating/wp-content/uploads/2026/04/Home-decor-styles-French-country-dining-room-by-Decorilla-designer-Lauren-L-854x1024.jpg" alt="French Country interior" onerror="this.parentElement.classList.add('broken')"/></figure></div>
+    </div>
+
+    <div class="s-twocol">
+      <div>
+        <h3 class="h3">मुख्य वैशिष्ट्ये <span class="h3-en">Key features</span></h3>
+        <ol class="features"><li>वेदर्ड / डिस्ट्रेस्ड लाकडी फर्निचर</li><li>टफ्टेड अपहोल्स्ट्री, लिनेन कापड</li><li>रॉट आयर्न शॅंडेलियर / डिटेल्स</li><li>टॉइल आणि फुलांचे प्रिंट</li><li>मऊ बेज, क्रीम, सेज, लॅव्हेंडर</li><li>मातीची भांडी आणि सिरॅमिक</li></ol>
+      </div>
+      <div>
+        <h3 class="h3">सुचवलेले फर्निचर <span class="h3-en">Suggested furniture</span></h3>
+        <p class="furn-hint">कोणत्याही वस्तूवर क्लिक करा — गूगलवर त्याची चित्रे आणि खरेदी पर्याय दिसतील.</p>
+        <div class="furn-grid"><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Tufted+Linen+Sofa" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">टफ्टेड लिनेन सोफा</span><span class="furn-en">Tufted Linen Sofa</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Weathered+Wood+Dining+Table" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">वेदर्ड वुड डायनिंग टेबल</span><span class="furn-en">Weathered Wood Dining Table</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Louis+XVI+Style+Chair" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">लुई VI चेअर</span><span class="furn-en">Louis XVI Style Chair</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Wrought+Iron+Chandelier" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">रॉट आयर्न शॅंडेलियर</span><span class="furn-en">Wrought Iron Chandelier</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=Toile+Throw+Pillow" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">टॉइल फॅब्रिक कुशन</span><span class="furn-en">Toile Throw Pillow</span></div></a><a class="furn-card" href="https://www.google.com/search?tbm=isch&q=French+Country+Bread+Bin" target="_blank" rel="noopener"><div class="furn-icon">↗</div><div class="furn-text"><span class="furn-mr">फार्महाउस ब्रेड बिन</span><span class="furn-en">French Country Bread Bin</span></div></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──────── FOOTER ──────── -->
+<footer>
+  <div class="closing-mark">~</div>
+  <h2>शेवटी एक विचार</h2>
+  <p>सजावटीची कोणतीही ‘योग्य’ शैली नसते. योग्य ती शैली असते जी तुम्हाला घरी आल्यासारखे वाटायला लावते. वरील बारा शैलींपैकी एखादीची शुद्ध आवृत्ती निवडण्याऐवजी, त्यांच्यातील जे जे तुम्हाला आवडेल ते एकत्र करा — आणि तुमची स्वतःची, अनोखी शैली घडवा.</p>
+  <p>घर हे केवळ राहण्याची जागा नाही, ती तुमच्या प्रवासाची, आठवणींची आणि स्वप्नांची साक्षीदार आहे. तिला तसेच सुंदर बनू द्या.</p>
+  <div class="credits">सर्व चित्रे — सौजन्य <a href="https://www.decorilla.com" target="_blank" rel="noopener">Decorilla</a> &nbsp;&middot;&nbsp; २०२६</div>
+</footer>
+
+<!-- ──────── JS ──────── -->
+<script>
+  // Smooth scroll on nav click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const id = link.dataset.target;
+      const el = document.getElementById(id);
+      if (el) {
+        const navH = document.querySelector('.topnav').offsetHeight;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Set accent color on active nav (matches each style)
+  const styleAccents = {
+    'bohemian':'#C66B3D', 'scandinavian':'#6B7B8C', 'minimalist':'#3A3733', 'industrial':'#B85C38', 'midcentury':'#2F6B6E', 'japandi':'#5C4A3A', 'farmhouse':'#7A5C3C', 'coastal':'#5B89A6', 'contemporary':'#5A6470', 'glam':'#8B5A6E', 'rustic':'#7A4B2A', 'frenchcountry':'#8B6E5C'
+  };
+
+  // Highlight current style in nav as user scrolls
+  const sections = Array.from(document.querySelectorAll('.style'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  function updateActive() {
+    const scrollY = window.scrollY + 200;
+    let active = sections[0];
+    for (const sec of sections) {
+      if (sec.offsetTop <= scrollY) active = sec;
+    }
+    navLinks.forEach(l => l.classList.remove('active'));
+    const cur = navLinks.find(l => l.dataset.target === active.id);
+    if (cur) {
+      cur.classList.add('active');
+      const accent = styleAccents[active.id];
+      if (accent) cur.style.setProperty('--accent-dynamic', accent);
+      // scroll the active link into view in the nav
+      cur.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(updateActive), {passive:true});
+  updateActive();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.05});
+  document.querySelectorAll('.style, .preface').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
